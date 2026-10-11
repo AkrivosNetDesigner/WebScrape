@@ -31,7 +31,8 @@ The tool has the following functions, and only these:
    - open service,
    - port,
    - product (software/hardware),
-   - version.
+   - version,
+   - CVE (for example `cve:CVE-2024-6387`).
 
 ### Hard boundary: no penetration testing
 
@@ -89,17 +90,22 @@ instead of building it.
   think something will work, tell the owner and ask what to do before going on.
 - **Do not create any code without asking first.**
 
+## Decisions made
+
+- **Language and backend:** Python, with FastAPI for the web API.
+- **Database:** PostgreSQL.
+- **Web interface:** pages built on the server from HTML templates, with CSS and
+  JavaScript in separate files and folders. The web page talks only to the API,
+  never directly to the database.
+
 ## Open decisions
 
 These are not decided yet. Do not assume an answer; ask the owner.
 
-- Programming language and stack.
 - Source of CVE data (for example the NVD API).
 - Scope, rate limits, and legal/ethical limits for internet-wide port scanning
   (opt-out list, scan rate, identification of the scanner).
 - Open-source license.
-- Database technology for storing and searching results.
-- Web interface approach (how the pages are built and served).
 - Source of IP-to-region (geolocation) data.
 - Exact filter names and syntax rules.
 
