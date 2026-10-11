@@ -123,12 +123,20 @@ instead of building it.
   (its licence is not cleanly GPL-compatible).
 - **Fingerprint output:** CPE names, so results map directly to NVD lookups.
 
+- **Distributed design:** one central server (PostgreSQL, API, web page, job
+  list, master exclusion list) and any number of regional workers. Workers fetch
+  jobs and return results over HTTPS with per-worker mutual TLS keys, and never
+  access the database directly. Work is split with ZMap's shard/seed options.
+  Jobs are leased in PostgreSQL and returned to the list if a worker fails.
+  A single server can run every role.
+
 ## Project layout (approved)
 
 ```
 webscrape/
   scanner/      finds open ports (random order, exclusion list)
   fingerprint/  reads banners to identify device, product, version
+  coordinator/  hands out scan jobs to workers from the central server
   cve/          looks up CVEs from the NVD API
   region/       loads RIR files, maps IP to registered country
   database/     PostgreSQL tables and queries
