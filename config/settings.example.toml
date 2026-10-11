@@ -1,0 +1,13 @@
+# WebScrape example configuration.
+# Copy this file to config/settings.toml and fill in your own values.
+# NEVER commit a real settings.toml containing secrets.
+
+[cve]
+# Your NVD API key. Leave blank to run without one (NVD will rate-limit you
+# heavily). Prefer setting the NVD_API_KEY environment variable instead of
+# putting the key in a file.
+api_key = ""
+
+[fingerprint]
+# Directory containing the Rapid7 Recog *.xml fingerprint files you installed.
+recog_dir = "/opt/recog/xml"
