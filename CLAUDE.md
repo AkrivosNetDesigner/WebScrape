@@ -115,6 +115,14 @@ instead of building it.
   - Operators are responsible for using a network/hosting provider that permits
     internet-wide scanning. Documentation must say so.
 
+- **Port discovery engine:** ZMap (Apache-2.0), driven by the Python `scanner`
+  module. Python itself only connects to ports ZMap found open, to read banners.
+- **Banner reading:** read what the service announces; for web/TLS ports send one
+  ordinary request and read the certificate. Nothing beyond a normal visitor.
+- **Fingerprint rules:** Rapid7 Recog (BSD-2). Do not use Nmap's probe database
+  (its licence is not cleanly GPL-compatible).
+- **Fingerprint output:** CPE names, so results map directly to NVD lookups.
+
 ## Project layout (approved)
 
 ```
