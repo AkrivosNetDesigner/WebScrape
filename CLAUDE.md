@@ -97,6 +97,10 @@ instead of building it.
 - **Web interface:** pages built on the server from HTML templates, with CSS and
   JavaScript in separate files and folders. The web page talks only to the API,
   never directly to the database.
+- **IP region data:** the daily delegation statistics files published by the
+  five Regional Internet Registries (AFRINIC, APNIC, ARIN, LACNIC, RIPE NCC).
+  Region is the ISO country code the IP block is registered to. Label it as the
+  registered country in the interface.
 
 ## Open decisions
 
@@ -106,7 +110,6 @@ These are not decided yet. Do not assume an answer; ask the owner.
 - Scope, rate limits, and legal/ethical limits for internet-wide port scanning
   (opt-out list, scan rate, identification of the scanner).
 - Open-source license.
-- Source of IP-to-region (geolocation) data.
 - Exact filter names and syntax rules.
 
 When one is decided, record the decision in this file.
