@@ -101,15 +101,16 @@ instead of building it.
   five Regional Internet Registries (AFRINIC, APNIC, ARIN, LACNIC, RIPE NCC).
   Region is the ISO country code the IP block is registered to. Label it as the
   registered country in the interface.
+- **CVE data:** the NVD (National Vulnerability Database) API. The API key is
+  supplied by the person running the tool and must never be committed.
+- **License:** GPL-3.0.
 
 ## Open decisions
 
 These are not decided yet. Do not assume an answer; ask the owner.
 
-- Source of CVE data (for example the NVD API).
 - Scope, rate limits, and legal/ethical limits for internet-wide port scanning
   (opt-out list, scan rate, identification of the scanner).
-- Open-source license.
 - Exact filter names and syntax rules.
 
 When one is decided, record the decision in this file.
