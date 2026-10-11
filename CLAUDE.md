@@ -24,6 +24,14 @@ The tool has the following functions, and only these:
    search.
 4. **Web search interface.**
    A graphical interface on a web page for searching that database.
+   Search supports Shodan-style filters typed into one search box, for example
+   `port:22 product:openssh country:GB`. Filters must cover:
+   - IP address,
+   - region of the IP (geographic location),
+   - open service,
+   - port,
+   - product (software/hardware),
+   - version.
 
 ### Hard boundary: no penetration testing
 
@@ -92,5 +100,7 @@ These are not decided yet. Do not assume an answer; ask the owner.
 - Open-source license.
 - Database technology for storing and searching results.
 - Web interface approach (how the pages are built and served).
+- Source of IP-to-region (geolocation) data.
+- Exact filter names and syntax rules.
 
 When one is decided, record the decision in this file.
