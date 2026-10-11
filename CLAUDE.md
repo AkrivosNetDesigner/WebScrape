@@ -8,7 +8,7 @@ Read it in full before doing anything in this project.
 WebScrape is a **free and open-source** security research tool. The aim is to stay
 useful to security researchers without features ever being moved behind a paywall.
 
-The tool has two functions, and only these two:
+The tool has the following functions, and only these:
 
 1. **Passive service discovery (similar to Shodan).**
    Find services that are openly reachable on the internet and report:
@@ -19,6 +19,11 @@ The tool has two functions, and only these two:
 2. **CVE check.**
    Take the software/hardware and the specific firmware/software version found in
    step 1 and look up the known CVEs that apply to it.
+3. **Searchable database.**
+   Store the results of steps 1 and 2 in a database that is easy and fast to
+   search.
+4. **Web search interface.**
+   A graphical interface on a web page for searching that database.
 
 ### Hard boundary: no penetration testing
 
@@ -85,5 +90,7 @@ These are not decided yet. Do not assume an answer; ask the owner.
 - Scope, rate limits, and legal/ethical limits for internet-wide port scanning
   (opt-out list, scan rate, identification of the scanner).
 - Open-source license.
+- Database technology for storing and searching results.
+- Web interface approach (how the pages are built and served).
 
 When one is decided, record the decision in this file.
