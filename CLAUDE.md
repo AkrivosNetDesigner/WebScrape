@@ -104,13 +104,21 @@ instead of building it.
 - **CVE data:** the NVD (National Vulnerability Database) API. The API key is
   supplied by the person running the tool and must never be committed.
 - **License:** GPL-3.0.
+- **Scanning approach (modelled on Shodan, ZMap and Masscan):**
+  - No built-in rate cap. The operator sets the scan rate.
+  - Targets (IPs and ports) are scanned in a random order so no single network
+    receives concentrated traffic.
+  - An exclusion list is always enforced and cannot be switched off. It covers
+    private and reserved address ranges and anyone who has opted out.
+  - The scanner identifies itself: the operator configures a clear reverse-DNS
+    name and an information page explaining the scanning.
+  - Operators are responsible for using a network/hosting provider that permits
+    internet-wide scanning. Documentation must say so.
 
 ## Open decisions
 
 These are not decided yet. Do not assume an answer; ask the owner.
 
-- Scope, rate limits, and legal/ethical limits for internet-wide port scanning
-  (opt-out list, scan rate, identification of the scanner).
 - Exact filter names and syntax rules.
 
 When one is decided, record the decision in this file.
