@@ -115,6 +115,27 @@ instead of building it.
   - Operators are responsible for using a network/hosting provider that permits
     internet-wide scanning. Documentation must say so.
 
+## Project layout (approved)
+
+```
+webscrape/
+  scanner/      finds open ports (random order, exclusion list)
+  fingerprint/  reads banners to identify device, product, version
+  cve/          looks up CVEs from the NVD API
+  region/       loads RIR files, maps IP to registered country
+  database/     PostgreSQL tables and queries
+  search/       parses Shodan-style filters
+  api/          FastAPI web API
+  web/          templates/, static/css/, static/js/
+tests/          one test folder per module above
+docs/           setup, operator and scanning guidance
+config/         example settings (no secrets)
+LICENSE, README.md, CLAUDE.md, pyproject.toml
+```
+
+Each module has one responsibility and only talks to the modules it needs.
+Place new code in the matching folder; ask before adding a new top-level folder.
+
 ## Open decisions
 
 These are not decided yet. Do not assume an answer; ask the owner.
